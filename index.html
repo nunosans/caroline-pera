@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-UK" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-UK">
+<head>
+
+<!-- Meta tags -->
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Caroline Pera Jewellery Design Portfolio for 2010" />
+	<meta name="keywords" content="Caroline Pera, portfolio, jewellery, design, collection, plumage, feathers, the spirit of water, primitive, fur, trompe l'oeil, central saint martins, csm, 2010, london, uk" />
+	
+	<title>Caroline Pera | Jewellery Design</title>
+	
+	<link rel="stylesheet" type="text/css" href="./CSS/indexCSS.css" />
+	
+	<script type="text/javascript" src="./jquery-1.4.2.min.js"></script>
+	
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+			
+			function resize() {
+		
+				var image = $('#background');
+			
+	    		//Define image ratio
+	    		var ratio = 0.75;
+	    		
+	    		//Gather browser and current image size
+	    		var browserwidth = $(window).width();
+	    		var browserheight = $(window).height();
+				
+	    		//Resize image to proper ratio
+	    		if ((browserheight/browserwidth) > ratio){
+	    		
+	    		    image.height(browserheight-ratio +1);
+	    		    image.width(browserheight / ratio +1);
+	    		    
+	    		} else {
+	    		
+	    		    image.width(browserwidth-ratio +1);
+	    		    image.height(browserwidth * ratio +1);
+	    		    
+	    		}
+	    		
+	    		image.css('left', (browserwidth - image.width())/2);
+	    		image.css('top', (browserheight - image.height())/2);
+
+	    		
+	    	};
+	    	
+	    	resize();
+			
+			$(window).resize(function() {
+			    resize();
+			});
+			
+			$('#menu').animate({left:"0"});
+			
+			var rand_no = Math.floor(Math.random() * 10);
+			
+			$("#bg" + rand_no).fadeIn('slow', function() {});
+			
+			var intervalo = window.setInterval(changeImage, 8000);
+			
+			function changeImage() {
+				
+				$("#bg" + rand_no).fadeOut("slow", function() {});
+     	   		    
+     	   		 
+     	   		prev_no = rand_no;
+     	   		while(prev_no == rand_no) {
+     	   		    
+     	   			rand_no = Math.floor(Math.random() * 9);
+     	   		    
+     	   		}
+     	   		        
+     	   		$("#bg" + rand_no).fadeIn("slow", function(){});
+			
+			};
+			
+		
+		});
+	    	
+	</script>
+
+</head>
+
+<body>
+
+	<div id="menu"><!--<img src="./Images/menu.png" alt=""/>-->
+		<div id="albums">
+			<p><a href="./thespiritofwater.html" class="album">The spirit of water</a></p>
+			<p><a href="./plumage.html" class="album">Plumages</a></p>
+			<p><a href="./trompeloeil.html" class="album">Trompe l'oeil</a></p>
+			<p><a href="./primitivecollection.html" class="album">Primitive Collection</a></p>
+			<p><a href="./furcollection.html" class="album">Fur Collection</a></p>
+			<p><a href="./oneofpieces.html" class="album">One-off Pieces</a></p>
+			
+		</div>
+		<div id="about">
+			<p><a href="./about.html" class="about">About, Awards and Contacts</a></p>
+		</div>
+	</div>
+	
+	<div id="container">
+	
+		<div id="topborder" class="border"></div>
+		<div id="leftborder" class="border"></div>
+		<div id="bottomborder" class="border"></div>
+		<div id="rightborder" class="border"></div>
+		
+		<div id="background">
+			<img id="bg0"  src="bg/bg1.jpg"  alt="bg1"  width="2500"  height="2000" />
+			<img id="bg1"  src="bg/bg2.jpg"  alt="bg2"  width="2500"  height="2000" />
+			<img id="bg2"  src="bg/bg3.jpg"  alt="bg3"  width="2500"  height="2000" />
+			<img id="bg3"  src="bg/bg4.jpg"  alt="bg4"  width="2500"  height="2000" />
+			<img id="bg4"  src="bg/bg5.jpg"  alt="bg5"  width="2500"  height="2000" />
+			<img id="bg5"  src="bg/bg6.jpg"  alt="bg6"  width="2500"  height="2000" />
+			<img id="bg6"  src="bg/bg7.jpg"  alt="bg7"  width="2500"  height="2000" />
+			<img id="bg7"  src="bg/bg8.jpg"  alt="bg8"  width="2500"  height="2000" />
+			<img id="bg8"  src="bg/bg9.jpg"  alt="bg9"  width="2500"  height="2000" />
+			<img id="bg9"  src="bg/bg10.jpg" alt="bg10" width="2500"  height="2000" />
+		</div>
+		<div id="header"><img src="./Images/headerWHT.png" alt="Caroline Pera"/></div>
+		<div id="contacts">
+		
+			<p><a href="mailto:mail@carolinepera.com">mail@carolinepera.com</a></p>
+			<p>+44 7896 256 899</p>
+		
+		</div>
+		<div id="title_and_description">
+			<div id="title"><img src="Images/titleWHT.png" alt="Caroline Pera"/></div>
+		</div>
+		<div id="copyright">
+		
+			<p>&copy; Caroline Pera 2010</p>
+			<p>Site by / <a href="http://savantstudio.co.uk/">Savant</a></p>
+		
+		</div>
+		
+	</div>
+
+</body>
+</html>
