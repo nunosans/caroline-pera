@@ -40,20 +40,7 @@
   </head>
   <body class="album">
 
-    <div class="nav">
-      <ul>
-        <li><a href="/the-spirit-of-water/">The spirit of water</a></li>
-        <li><a href="/plumages/">Plumages</a></li>
-        <li><a href="/tromp-loeil/">Trompe l'oeil</a></li>
-        <li><a href="/primitive-collection/">Primitive Collection</a></li>
-        <li><a href="/fur-collection/">Fur Collection</a></li>
-        <li><a href="/one-off-pieces/">One-off Pieces</a></li>
-      </ul>
-      <hr>
-      <ul>
-        <li><a href="/about/">About</a></li>
-      </ul>
-    </div>
+    <%= partial "nav" %>
 
     <div id="header">
       <a href="/">
@@ -70,7 +57,5 @@
     <!-- Scripts -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <%= javascript_include_tag  "all" %>
-    <!-- Analytics -->
-    <!-- <script type="text/javascript" src="http://mint.carolinepera.com/?js"></script> -->
   </body>
 </html>

@@ -1,0 +1,16 @@
+/* Team */
+  Designer/Developer:   Nuno Coelho Santos
+  Contact:              nuno [at] savantstudio.co.uk
+  Twitter:              @nunosans
+  From:                 London, UK
+
+  Developer:            Tiago Alves
+  Contact:              tiago [at] savantstudio.co.uk
+  Twitter:              @plaintiago
+  From:                 Porto, PT
+
+/* Site */
+  Last update:          2012/10/26
+  Language:             English
+  Doctype:              HTML5
+  IDE:                  Adobe Illustrator CS6, Sublime Text 2
