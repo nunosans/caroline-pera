@@ -1,0 +1,45 @@
+body {
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  color:#000;
+  font-size: 12px;
+  font-family: "Trebuchet MS";
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: #FFF;
+  text-decoration: none;
+  -webkit-transition-property: color;
+     -moz-transition-property: color;
+       -o-transition-property: color;
+          transition-property: color;
+  -webkit-transition-duration: 0.12s;
+     -moz-transition-duration: 0.12s;
+       -o-transition-duration: 0.12s;
+          transition-duration: 0.12s;
+  -webkit-transition-timing-function: ease-out;
+     -moz-transition-timing-function: ease-out;
+       -o-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+}
+
+img {
+  border: 0;
+}
+
+ul,
+li,
+p {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
