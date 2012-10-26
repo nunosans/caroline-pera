@@ -37,7 +37,10 @@ $(document).ready(function() {
     var images = background.children('img');
     var speed = 800;
     var interval = 7000;
-    var current = Math.floor(Math.random() * (images.length - 1));
+    var current = Math.floor(Math.random() * (images.length));
+
+    console.log(images.length);
+    console.log(current);
 
     images.hide();
     images.eq(current).fadeIn(speed);
@@ -48,8 +51,10 @@ $(document).ready(function() {
 
       // Find different random figure.
       while(previous == current) {
-        current = Math.floor(Math.random() * (images.length - 1));
+        current = Math.floor(Math.random() * (images.length));
       };
+
+      console.log(current);
 
       // Fade the new background in.
       images.eq(previous).css('z-index', 0);
