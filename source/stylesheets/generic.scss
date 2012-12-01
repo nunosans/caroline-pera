@@ -18,10 +18,10 @@ a:active,
 a:focus {
   color: #FFF;
   text-decoration: none;
-  -webkit-transition-property: color;
-     -moz-transition-property: color;
-       -o-transition-property: color;
-          transition-property: color;
+  -webkit-transition-property: all;
+     -moz-transition-property: all;
+       -o-transition-property: all;
+          transition-property: all;
   -webkit-transition-duration: 0.12s;
      -moz-transition-duration: 0.12s;
        -o-transition-duration: 0.12s;
@@ -42,4 +42,8 @@ p {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 5px 0;
 }

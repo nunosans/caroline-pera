@@ -1,11 +1,8 @@
 @import "generic";
-@import "type";
 @import "nav";
-@import "title";
 @import "header";
 @import "borders";
 @import "albums";
-@import "credits";
 @import "cover";
 
 #header,
@@ -27,63 +24,43 @@
   display: none;
 }
 
-#whitemargin {
-  bottom: 116px;
-  text-align: right;
-  position: fixed;
-  right: 0px;
-  width: 40px;
-  height: 85px;
-  z-index: 20;
-  background-color: white;
+h3 {
+  font-family: "presicav", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 25px 0 5px;
 }
 
-#textright {
-  text-align: right;
-}
-
-#text-personal {
-  line-height: 14px;
-  width: 250px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: 70px;
-  margin-top: -148px;
-}
-
-#text-academic {
-  line-height: 14px;
-  width: 250px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -200px;
-  margin-top: 207px;
-}
-
-#text-bio {
-  line-height: 14px;
-  width: 252px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -400px;
-  margin-top: 109px;
-  a {
-    color: black;
+.full-body-text {
+  line-height: 16px;
+  margin-top: 0;
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 150px;
+  p {
+    margin: 10px 0;
+    color: #555;
   }
-}
-
-#text-professional {
-  line-height: 14px;
-  width: 252px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: 70px;
-  margin-top: 109px;
   a {
-    color: black;
+    color: #555;
+    text-decoration: underline;
+    &:hover {
+      color: #000;
+    }
+  }
+  li {
+    margin: 3px 0;
+  }
+  em {
+    color: #000;
+    font-style: normal;
+    font-weight: bold;
+  }
+  .col {
+    display: table-cell;
+    width: 40%;
+    padding-right: 10%;
   }
 }

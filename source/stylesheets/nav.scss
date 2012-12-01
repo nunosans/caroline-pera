@@ -13,14 +13,63 @@
     background: url("/images/graphics/bg-hr.png") 0 0 no-repeat;
   }
   li {
-    height: 19px;
     text-align: center;
+    ul {
+      display: none;
+    }
+  }
+  li.menu {
+    h4 {
+      background: url(/images/graphics/menu-collapsed-arrow.png) 0 50% no-repeat;
+      background-size: 10px 9px;
+    }
+  }
+  li.menu.expanded {
+    h4 {
+      cursor: default;
+      background: url(/images/graphics/menu-expanded-arrow.png) 0 50% no-repeat;
+      background-size: 10px 9px;
+    }
   }
   a {
     padding: 3px 0;
+    display: inline-block;
+    height: 8px;
+    line-height: 10px;
+    border-bottom: 1px solid #000;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      color: #AAA;
+    }
+    &.current {
+      border-bottom: 1px solid #FFF;
+      &:hover {
+        border-bottom: 1px solid #AAA;
+      }
+    }
   }
-  a:hover {
+  h4,
+  h4 a {
+    font-weight: normal;
     color: #AAA;
+    cursor: pointer;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  h4 {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0 16px;
+    height: 16px;
+    a:hover {
+      color: #FFF;
+    }
+    a.current {
+      border-bottom: 1px solid #AAA;
+      &:hover {
+        border-bottom: 1px solid #FFF;
+      }
+    }
   }
 }
 
@@ -60,6 +109,8 @@
   right: 40px;
   text-align: right;
 }
+
+
 
 
 body.cover {

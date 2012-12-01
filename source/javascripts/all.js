@@ -27,10 +27,6 @@ $(document).ready(function() {
   };
   resize();
 
-  $(window).resize(function() {
-    resize();
-  });
-
   // Swap cover images.
   function changeImage() {
     // Define variables.
@@ -38,9 +34,6 @@ $(document).ready(function() {
     var speed = 800;
     var interval = 7000;
     var current = Math.floor(Math.random() * (images.length));
-
-    console.log(images.length);
-    console.log(current);
 
     images.hide();
     images.eq(current).fadeIn(speed);
@@ -54,8 +47,6 @@ $(document).ready(function() {
         current = Math.floor(Math.random() * (images.length));
       };
 
-      console.log(current);
-
       // Fade the new background in.
       images.eq(previous).css('z-index', 0);
       images.eq(current).css('z-index', 1).fadeIn(speed, function() {
@@ -65,6 +56,22 @@ $(document).ready(function() {
 
     var timeout = window.setInterval(swap, interval);
   };
+
+  function navAnimations() {
+    var nav = $('.nav');
+    var sectionTitles = nav.find('h4');
+    var albums = sectionTitles.siblings('ul');
+
+    nav.find('.expanded').children('ul').show();
+
+    sectionTitles.click(function() {
+      if (!$(this).parent().hasClass('expanded')) {
+        albums.slideUp(120).parent().removeClass('expanded');
+        $(this).siblings('ul').slideDown(120).end().parent().addClass('expanded');
+      }
+    })
+  };
+  navAnimations();
 
   $(window).load(function() {
 
@@ -86,5 +93,10 @@ $(document).ready(function() {
     };
 
   });
+
+  $(window).resize(function() {
+    resize();
+  });
+
 
 });
