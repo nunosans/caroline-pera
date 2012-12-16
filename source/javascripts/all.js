@@ -73,6 +73,28 @@ $(document).ready(function() {
   };
   navAnimations();
 
+  $('#preview').click(function() {
+    var image = $(this).find('img');
+    var imageRatio = image.width() / image.height();
+    var container = $('.magnifier');
+    var containerRatio = container.width() / container.height();
+
+    image.clone().appendTo(container).css({
+      'width' : 'auto',
+      'height': '100%',
+      'display': 'inline',
+      'opacity': 1
+    });
+
+    container.css('display', 'table-cell');
+
+  });
+
+  $('.magnifier').click(function() {
+    $(this).hide();
+    $(this).find('img').remove();
+  })
+
   $(window).load(function() {
 
     if ($('body').hasClass('cover')) {

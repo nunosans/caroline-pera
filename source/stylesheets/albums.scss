@@ -77,14 +77,39 @@ span#description,
   opacity: 0.4;
   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
 }
-#imageWrapper{
-  // position:relative;
+
+#imageWrapper {
   padding-top:80px;
   text-align:center;
+  img {
+    margin:0 auto;
+    cursor: pointer;
+    cursor: -webkit-zoom-in;
+    cursor: -moz-zoom-in;
+  }
 }
-#imageWrapper img{
-  margin:0 auto;
+
+.magnifier {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: none;
+  z-index: 200;
+  cursor: -webkit-zoom-out;
+  cursor: -moz-zoom-out;
+  text-align: center;
+  background-image: url(../images/graphics/bg-overlay.png);
+  > * {
+    width: auto;
+    height: 100%;
+    display: inline;
+    box-shadow: 0 0 8px rgba(0,0,0,.2), 0 0 1px rgba(0,0,0,.2);
+  }
 }
+
 .albumSelect{
   height:18px;
   line-height:18px;
@@ -181,4 +206,6 @@ span#description,
     color: #AAA;
   }
 }
+
+
 
