@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= data.page.title || "Caroline Pera" %></title>
+    <!-- Technical Formatting Meta Tags -->
+    <meta http-equiv="content-type"     content="text/html;charset=utf-8">
+    <meta http-equiv="content-language" content="en-gb">
+    <!-- Authoring Meta Tags -->
+    <meta name="author"    content="Nuno Coelho Santos">
+    <meta name="publisher" content="Nuno Coelho Santos">
+    <meta name="copyright" content="Nuno Coelho Santos, Caroline Pera">
+    <meta name="host"      content="savantstudio.co.uk">
+    <meta name="generator" content="Sublime Text 2">
+    <!-- Search Engine Meta Tags -->
+    <meta name="description"   content="Caroline Pera • Independant Artist Showcase">
+    <meta name="keywords"      content="caroline pera, work, jewellery, artist, central saint martins, csm, italian, london, uk">
+    <meta name="revisit-after" content="20 days">
+    <!-- Browser Compatibility Meta Tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge; chrome=1">
+    <!-- Open Graph Meta Tags (ogp.me)-->
+    <meta property="og:image"       content="http://carolinepera.com/images/social-1.jpg">
+    <meta property="og:image"       content="http://carolinepera.com/images/social-2.jpg">
+    <meta property="og:image"       content="http://carolinepera.com/images/social-3.jpg">
+    <meta property="og:site_name"   content="Caroline Pera">
+    <meta property="og:title"       content="Caroline Pera">
+    <meta property="og:description" content="Caroline Pera • Independant Artist Showcase">
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="http://carolinepera.com">
+    <meta property="og:locale"      content="en_GB">
+    <!-- Favicon Meta Tags (use both) -->
+    <link rel="icon"          href="/images/graphics/favicon.ico">
+    <link rel="shortcut icon" href="/images/graphics/favicon.ico">
+    <!-- Stylesheets -->
+    <%= stylesheet_link_tag "all" %>
+    <!-- Typekit -->
+    <script type="text/javascript" src="//use.typekit.net/fxq5fgx.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <!-- Humans -->
+    <link rel="author" href="/humans.txt">
+  </head>
+  <body class="text">
+
+    <div id="header">
+      <a href="/">
+        <img src="/images/graphics/logo-small-black.png" alt="Caroline Pera">
+      </a>
+    </div>
+
+    <p class="contacts">
+      <a href="mailto:mail@carolinepera.com">mail@carolinepera.com</a><br>+44(0) 7896 256 899
+    </p>
+
+    <%= yield %>
+
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <%= javascript_include_tag  "all" %>
+
+    <!-- Google Analytics -->
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-35922818-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
