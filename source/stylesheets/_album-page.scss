@@ -1,0 +1,75 @@
+// Album Page
+
+#imageWrapper {
+  padding-top:80px;
+  text-align:center;
+  img {
+    margin: 0 auto;
+    cursor: pointer;
+    cursor: -webkit-zoom-in;
+    cursor: -moz-zoom-in;
+  }
+}
+
+#thumbsWrapper {
+  position: absolute;
+  width:100%;
+  height:102px;
+  overflow: hidden;
+  background-color: $light;
+  bottom:0px;
+  left:0px;
+}
+
+#thumbsContainer {
+  height: 84px;
+  visibility: hidden;
+  margin: 0;
+  img {
+    float:left;
+    margin: 2px;
+    display:block;
+    cursor:pointer;
+    opacity: 0.4;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+  }
+}
+
+.album-credits {
+  font-family: "Trebuchet MS";
+  font-size: 11px;
+  line-height: 14px;
+  color: $mid-tone;
+  position: absolute;
+  bottom: 116px;
+  right: 0;
+  text-align: right;
+  width: auto;
+  padding: 10px 40px 5px 50px;
+  background-image: url("/images/graphics/bg-credits.png");
+  z-index: 10;
+  a {
+    color: $mid-tone;
+  }
+}
+
+.magnifier {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: none;
+  z-index: 200;
+  cursor: -webkit-zoom-out;
+  cursor: -moz-zoom-out;
+  text-align: center;
+  background-image: url(../images/graphics/bg-overlay.png);
+  > * {
+    width: auto;
+    height: 100%;
+    display: inline;
+    box-shadow: 0 0 8px rgba(0,0,0,.2), 0 0 1px rgba(0,0,0,.2);
+  }
+}

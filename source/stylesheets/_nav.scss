@@ -1,3 +1,5 @@
+// Nav menu
+
 .nav {
   position: fixed;
   top: 80px;
@@ -5,6 +7,12 @@
   z-index: 30;
   padding: 10px 90px 10px 30px;
   width: 255px;
+  color: $light;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: "presicav", sans-serif;
+  line-height: 18px;
+  -webkit-font-smoothing: antialiased;
   background: url("/images/graphics/bg-menu.png") 100% 50% no-repeat;
   hr {
     margin: 3px;
@@ -36,13 +44,13 @@
     display: inline-block;
     height: 8px;
     line-height: 10px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid $dark;
     border-bottom: 1px solid transparent;
     &:hover {
-      color: #AAA;
+      color: $mid-tone;
     }
     &.current {
-      border-bottom: 1px solid #FFF;
+      border-bottom: 1px solid $light;
       &:hover {
         border-bottom: 1px solid #AAA;
       }
@@ -51,7 +59,7 @@
   h4,
   h4 a {
     font-weight: normal;
-    color: #AAA;
+    color: $mid-tone;
     cursor: pointer;
     font-size: 9px;
     letter-spacing: 1px;
@@ -62,69 +70,13 @@
     padding: 0 16px;
     height: 16px;
     a:hover {
-      color: #FFF;
+      color: $light;
     }
     a.current {
       border-bottom: 1px solid #AAA;
       &:hover {
-        border-bottom: 1px solid #FFF;
+        border-bottom: 1px solid $light;
       }
     }
-  }
-}
-
-.nav,
-.copyright,
-.contacts {
-  color: #FFF;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-family: "presicav", sans-serif;
-  line-height: 18px;
-  -webkit-font-smoothing: antialiased;
-}
-
-.copyright,
-.contacts {
-  color: #AAA;
-  letter-spacing: 1px;
-  font-size: 10px;
-  a {
-    color: #AAA;
-  }
-  a:hover {
-    border-bottom: 1px solid #AAA;
-  }
-}
-
-.copyright {
-  position: absolute;
-  bottom: 35px;
-  left: 40px;
-}
-
-.contacts {
-  position: absolute;
-  top: 36px;
-  right: 40px;
-  text-align: right;
-}
-
-
-
-
-body.cover {
-  .nav {
-    left: -400px;
-  }
-  .contacts,
-  .copyright,
-  .contacts a,
-  .copyright a {
-    color: #FFF;
-  }
-  .contacts a:hover,
-  .copyright a:hover {
-    border-bottom: 1px solid #FFF;
   }
 }

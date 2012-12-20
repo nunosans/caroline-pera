@@ -3,7 +3,7 @@
 $(document).ready(function() {
 
   // Recurring variables.
-  var background = $('#background');
+  var background = $('.cover-background');
 
   // Resize cover images.
   function resize() {
@@ -97,7 +97,7 @@ $(document).ready(function() {
 
   $(window).load(function() {
 
-    if ($('body').hasClass('cover')) {
+    if ($('body').hasClass('cover-page')) {
       // Animate the nav.
       $('.nav').animate({left: '0'});
       // Start playing the cover slideshow.

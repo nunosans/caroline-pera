@@ -1,0 +1,72 @@
+// Cover Page Layout
+
+.cover-page {
+  font-family: "presicav", sans-serif;
+  font-size: 12px;
+  color: #B2B2B2;
+  position: relative;
+  .nav {
+    left: -400px;
+  }
+  .contacts,
+  .copyright,
+  .contacts a,
+  .copyright a {
+    color: $light;
+  }
+  .contacts a:hover,
+  .copyright a:hover {
+    border-bottom: 1px solid $light;
+  }
+}
+
+// Cover Page Cover Background Images
+
+.cover-background {
+  z-index:-1;
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+}
+
+// Cover Page Borders
+
+.borders {
+  * {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+  }
+  .top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+  }
+  .right {
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 100%;
+  }
+  .bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+  }
+  .left {
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 100%;
+  }
+}
