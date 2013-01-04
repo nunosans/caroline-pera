@@ -87,7 +87,7 @@ $(function() {
     current = $thumb.index()+1;
     $('#imageWrapper').empty();
     $('#credits p').html($thumb.attr('title'))
-    $('<img id="displayed" class="cursorClass" style="display:none;" title="'+$thumb.attr('title')+'"/>').load(function(){
+    var img = $('<img id="displayed" class="cursorClass" style="display:none;" title="'+$thumb.attr('title')+'"/>').load(function(){
       var $this = $(this);
       resize($this,0);
       if(!$('#imageWrapper').find('img').length){
@@ -95,6 +95,9 @@ $(function() {
                             $('#description').html($this.attr('title'));
                         }
     }).attr('src',$thumb.attr('alt'));
+
+    console.log(current);
+    return img
   }
 
   //Get our elements for faster access and set overlay width
@@ -246,5 +249,62 @@ $(function() {
     }
 
 
+  function appendImageToContainer ($img, $container) {
+    $img.clone().appendTo($container).css({
+      'width' : 'auto',
+      'height': '100%',
+      'display': 'inline',
+      'opacity': 1
+    });
 
+    $container.css('display', 'table-cell');
+  }
+
+  // Hide "next" if last image. Hide "prev" if first.
+  function updateDirButtonsVisibility(){
+    var container = $('.magnifier');
+    container.find('button').show();
+    if (current === 1 ){
+      container.find('button[data-dir="prev"]').hide();
+    } else if (current === numberOfImages){
+      container.find('button[data-dir="next"]').hide();
+    }
+  }
+
+  $('#preview').click(function() {
+    var image = $(this).find('img');
+    var imageRatio = image.width() / image.height();
+    var container = $('.magnifier');
+    var containerRatio = container.width() / container.height();
+
+    updateDirButtonsVisibility();
+    appendImageToContainer(image, container);
+
+  });
+
+  $('.magnifier').click(function() {
+    $(this).hide();
+    $(this).find('img').remove();
+  });
+
+  $('.magnifier button').on('click', function(e){
+    // Prevent hiding div.magnifier when one of the buttons is clicked
+    e.stopPropagation();
+    var container = $('.magnifier');
+    var dir = $(this).data('dir');
+
+    // Move to previous or next image. The modulo operation allows skipping to the first 
+    // image when reaching the last image and the dir="next". The false action doesn't need
+    // it since when arriving to the first image and hitting the dir="prev" the current 
+    // variable will be set to -1 which the .get() method will interpret as the last element
+    // from the thumbs set.
+    var newThumbPosition = (dir === 'next') ? (current + 1) % numberOfImages : current - 1;
+    var newThumb = $('#thumbsContainer img').get(newThumbPosition - 1); // -1 since get is zero-based
+    var newImg = loadPhoto($(newThumb), 'cursorPlus'); 
+
+    container.find('img').remove();
+    updateDirButtonsVisibility();
+    appendImageToContainer($(newImg), container);
+
+  });
 });
