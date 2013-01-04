@@ -3,10 +3,7 @@
 $(document).ready(function() {
 
   // Recurring variables.
-  var background = $('.cover-background'),
-      // zero-based system
-      imgsLen  = $('#thumbsContainer').children('img').length - 1;
-      currentImgPosition = 0;
+  var background = $('.cover-background')
 
   // Resize cover images.
   function resize() {
