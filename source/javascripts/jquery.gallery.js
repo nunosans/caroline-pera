@@ -10,6 +10,9 @@ $(function() {
   /* Total number of images. */
   var numberOfImages = 0;
 
+  /* Recurrent variable */
+  var $magnifier = $('.magnifier');
+
   /**
    * Initialize modules.
    */
@@ -96,7 +99,6 @@ $(function() {
                         }
     }).attr('src',$thumb.attr('alt'));
 
-    console.log(current);
     return img
   }
 
@@ -249,48 +251,45 @@ $(function() {
     }
 
 
-  function appendImageToContainer ($img, $container) {
-    $img.clone().appendTo($container).css({
+  function appendImageToMagnifier ($img) {
+    $img.clone().insertAfter($magnifier.find('button[data-dir="prev"]')).css({
       'width' : 'auto',
       'height': '100%',
       'display': 'inline',
       'opacity': 1
     });
 
-    $container.css('display', 'table-cell');
+    $magnifier.css('display', 'table-cell');
   }
 
   // Hide "next" if last image. Hide "prev" if first.
   function updateDirButtonsVisibility(){
-    var container = $('.magnifier');
-    container.find('button').show();
+    $magnifier.find('button').show();
     if (current === 1 ){
-      container.find('button[data-dir="prev"]').hide();
+      $magnifier.find('button[data-dir="prev"]').hide();
     } else if (current === numberOfImages){
-      container.find('button[data-dir="next"]').hide();
+      $magnifier.find('button[data-dir="next"]').hide();
     }
   }
 
   $('#preview').click(function() {
     var image = $(this).find('img');
     var imageRatio = image.width() / image.height();
-    var container = $('.magnifier');
-    var containerRatio = container.width() / container.height();
+    var containerRatio = $magnifier.width() / $magnifier.height();
 
     updateDirButtonsVisibility();
-    appendImageToContainer(image, container);
+    appendImageToMagnifier(image);
 
   });
 
-  $('.magnifier').click(function() {
+  $magnifier.click(function() {
     $(this).hide();
     $(this).find('img').remove();
   });
 
-  $('.magnifier button').on('click', function(e){
+  $magnifier.find('button').on('click', function(e){
     // Prevent hiding div.magnifier when one of the buttons is clicked
     e.stopPropagation();
-    var container = $('.magnifier');
     var dir = $(this).data('dir');
 
     // Move to previous or next image. The modulo operation allows skipping to the first 
@@ -302,9 +301,8 @@ $(function() {
     var newThumb = $('#thumbsContainer img').get(newThumbPosition - 1); // -1 since get is zero-based
     var newImg = loadPhoto($(newThumb), 'cursorPlus'); 
 
-    container.find('img').remove();
+    $magnifier.find('img').remove();
     updateDirButtonsVisibility();
-    appendImageToContainer($(newImg), container);
-
+    appendImageToMagnifier($(newImg));
   });
 });
