@@ -273,9 +273,9 @@ $(function() {
   }
 
   $('#preview').click(function() {
-    var image = $(this).find('img');
-    var imageRatio = image.width() / image.height();
-    var containerRatio = $magnifier.width() / $magnifier.height();
+    var image = $(this).find('img'),
+        imageRatio = image.width() / image.height(),
+        containerRatio = $magnifier.width() / $magnifier.height();
 
     updateDirButtonsVisibility();
     appendImageToMagnifier(image);
@@ -291,7 +291,6 @@ $(function() {
     // Prevent hiding div.magnifier when one of the buttons is clicked
     e.stopPropagation();
     var dir = $(this).data('dir');
-
     // Move to previous or next image. The modulo operation allows skipping to the first
     // image when reaching the last image and the dir="next". The false action doesn't need
     // it since when arriving to the first image and hitting the dir="prev" the current
