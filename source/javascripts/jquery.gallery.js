@@ -57,7 +57,6 @@ $(function() {
             $('#loading').hide();
             resize($first,0);
             $('#imageWrapper').append($first);
-            $('#description').html($this.attr('title'));
           }).attr('src',$this.attr('alt'));
         }
         if(count == countImages){
@@ -95,7 +94,7 @@ $(function() {
       resize($this,0);
       if(!$('#imageWrapper').find('img').length){
                             $('#imageWrapper').append($this.fadeIn(1000));
-                            $('#description').html($this.attr('title'));
+                            $('.album-credits p').html($this.attr('title'));
                         }
     }).attr('src',$thumb.attr('alt'));
 
