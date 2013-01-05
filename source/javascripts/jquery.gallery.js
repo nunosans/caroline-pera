@@ -252,7 +252,7 @@ $(function() {
 
 
   function appendImageToMagnifier ($img) {
-    $img.clone().insertAfter($magnifier.find('button[data-dir="prev"]')).css({
+    $img.clone().appendTo($magnifier).css({
       'width' : 'auto',
       'height': '100%',
       'display': 'inline',
@@ -264,11 +264,11 @@ $(function() {
 
   // Hide "next" if last image. Hide "prev" if first.
   function updateDirButtonsVisibility(){
-    $magnifier.find('button').show();
+    $magnifier.find('.button').show();
     if (current === 1 ){
-      $magnifier.find('button[data-dir="prev"]').hide();
+      $magnifier.find('.button[data-dir="prev"]').hide();
     } else if (current === numberOfImages){
-      $magnifier.find('button[data-dir="next"]').hide();
+      $magnifier.find('.button[data-dir="next"]').hide();
     }
   }
 
@@ -287,19 +287,19 @@ $(function() {
     $(this).find('img').remove();
   });
 
-  $magnifier.find('button').on('click', function(e){
+  $magnifier.find('.button').on('click', function(e){
     // Prevent hiding div.magnifier when one of the buttons is clicked
     e.stopPropagation();
     var dir = $(this).data('dir');
 
-    // Move to previous or next image. The modulo operation allows skipping to the first 
+    // Move to previous or next image. The modulo operation allows skipping to the first
     // image when reaching the last image and the dir="next". The false action doesn't need
-    // it since when arriving to the first image and hitting the dir="prev" the current 
+    // it since when arriving to the first image and hitting the dir="prev" the current
     // variable will be set to -1 which the .get() method will interpret as the last element
     // from the thumbs set.
     var newThumbPosition = (dir === 'next') ? (current + 1) % numberOfImages : current - 1;
     var newThumb = $('#thumbsContainer img').get(newThumbPosition - 1); // -1 since get is zero-based
-    var newImg = loadPhoto($(newThumb), 'cursorPlus'); 
+    var newImg = loadPhoto($(newThumb), 'cursorPlus');
 
     $magnifier.find('img').remove();
     updateDirButtonsVisibility();

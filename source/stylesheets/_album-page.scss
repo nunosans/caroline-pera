@@ -64,12 +64,59 @@
   z-index: 200;
   cursor: -webkit-zoom-out;
   cursor: -moz-zoom-out;
+  cursor: -o-zoom-out;
+  cursor: zoom-out;
   text-align: center;
   background-image: url(../images/graphics/bg-overlay.png);
-  > * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+  img {
     width: auto;
     height: 100%;
     display: inline;
     box-shadow: 0 0 8px rgba(0,0,0,.2), 0 0 1px rgba(0,0,0,.2);
+  }
+  .button {
+    z-index: 10;
+    cursor: pointer;
+    position: absolute;
+    opacity: .6;
+    top: 50%;
+    margin-top: -122px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 100px;
+    font-size: 0;
+    width: 45px;
+    height: 45px;
+    color: transparent;
+    -webkit-transition-property: opacity;
+       -moz-transition-property: opacity;
+         -o-transition-property: opacity;
+            transition-property: opacity;
+    -webkit-transition-duration: .12s;
+       -moz-transition-duration: .12s;
+         -o-transition-duration: .12s;
+            transition-duration: .12s;
+    -webkit-transition-timing-function: ease-in-out;
+       -moz-transition-timing-function: ease-in-out;
+         -o-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+    &[data-dir="next"] {
+      right: 0;
+      background-image: url(../images/graphics/btn-next.png);
+      background-position: 100% center;
+    }
+    &[data-dir="prev"] {
+      left: 0;
+      background-image: url(../images/graphics/btn-prev.png);
+      background-position: 0% center;
+    }
+    &:hover {
+      opacity: 1;
+    }
   }
 }
