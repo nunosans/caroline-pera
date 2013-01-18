@@ -22,12 +22,12 @@ $(function() {
    * Load images by clicking on a thumbnail.
    * The image's path is on the thumb's alt attribute.
    */
-  $('#thumbsContainer img').live('click', function() {
+  $('#thumbsContainer img').on('click', function() {
     loadPhoto($(this), 'cursorPlus');
-  }).live('mouseover', function() {
+  }).on('mouseover', function() {
     var $this   = $(this);
     $this.stop().animate({'opacity':'1.0'}, 200);
-  }).live('mouseout', function() {
+  }).on('mouseout', function() {
      var $this   = $(this);
     $this.stop().animate({'opacity':'0.4'}, 200);
   });
