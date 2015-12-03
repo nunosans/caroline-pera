@@ -74,8 +74,8 @@ $(document).ready(function() {
   navAnimations();
 
   function projectDescription() {
-    var descriptionThumbnail = $('*[data-action="show-description"');
-    var description = $('#descriptionWrapper');
+    var descriptionThumbnail = $('*[data-action="show-album-description"');
+    var description = $('#albumDescriptionWrapper');
 
     descriptionThumbnail.click(function() {
       $('#imageWrapper').empty();

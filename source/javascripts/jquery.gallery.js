@@ -88,8 +88,8 @@ $(function() {
   function loadPhoto($thumb, cursorClass) {
     current = $thumb.index()+1;
     $('#imageWrapper').empty();
-    $('#descriptionWrapper').hide();
-    $('#credits p').html($thumb.attr('title'))
+    $('#albumDescriptionWrapper').hide();
+    $('#credits p').html($thumb.attr('title'));
     var img = $('<img id="displayed" class="cursorClass" style="display:none;" title="'+$thumb.attr('title')+'"/>').load(function(){
       var $this = $(this);
       resize($this,0);
@@ -99,7 +99,7 @@ $(function() {
                         }
     }).attr('src',$thumb.attr('alt'));
 
-    return img
+    return img;
   }
 
   //Get our elements for faster access and set overlay width
