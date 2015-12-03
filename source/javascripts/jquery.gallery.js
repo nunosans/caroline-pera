@@ -277,6 +277,10 @@ $(function() {
         imageRatio = image.width() / image.height(),
         containerRatio = $magnifier.width() / $magnifier.height();
 
+    if (image.length === 0) {
+      return;
+    }
+
     updateDirButtonsVisibility();
     appendImageToMagnifier(image);
 
