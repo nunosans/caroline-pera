@@ -1,7 +1,7 @@
 // Album Page
 
 #imageWrapper {
-  padding-top:80px;
+  padding-top: 80px;
   text-align:center;
   img {
     margin: 0 auto;
@@ -11,14 +11,45 @@
   }
 }
 
+#descriptionWrapper {
+  font-size: 17px;
+  line-height: 22px;
+  position: absolute;
+  overflow: auto;
+  left: 20px;
+  right: 20px;
+  top: 120px;
+  bottom: 140px;
+  @media (min-width: 750px) {
+    left: 120px;
+    right: 120px;
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 60px;
+       -moz-column-gap: 60px;
+            column-gap: 60px;
+  }
+  h5 {
+    display: block;
+    width: 100%;
+    margin: 0 0 11px 0;
+  }
+  p {
+    margin-bottom: 10px;
+    font-family: serif;
+    color: darken(white, 75%);
+  }
+}
+
 #thumbsWrapper {
   position: absolute;
-  width:100%;
-  height:102px;
+  width: 100%;
+  height: 102px;
   overflow: hidden;
   background-color: $light;
-  bottom:0px;
-  left:0px;
+  bottom: 0px;
+  left: 0px;
 }
 
 #thumbsContainer {
@@ -26,13 +57,24 @@
   visibility: hidden;
   margin: 0;
   img {
-    float:left;
+    float: left;
     margin: 2px;
-    display:block;
-    cursor:pointer;
+    display: block;
+    cursor: pointer;
     opacity: 0.4;
     filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
   }
+}
+
+.description-thumbnail {
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin: 2px;
+  display: block;
+  cursor: pointer;
+  opacity: 0.4;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
 }
 
 .album-credits {

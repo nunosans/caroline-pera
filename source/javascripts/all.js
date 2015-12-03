@@ -73,6 +73,17 @@ $(document).ready(function() {
   };
   navAnimations();
 
+  function projectDescription() {
+    var descriptionThumbnail = $('*[data-action="show-description"');
+    var description = $('#descriptionWrapper');
+
+    descriptionThumbnail.click(function() {
+      $('#imageWrapper').empty();
+      description.fadeIn(400);
+    })
+  };
+  projectDescription();
+
   $(window).load(function() {
 
     if ($('body').hasClass('cover-page')) {

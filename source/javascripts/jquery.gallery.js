@@ -88,6 +88,7 @@ $(function() {
   function loadPhoto($thumb, cursorClass) {
     current = $thumb.index()+1;
     $('#imageWrapper').empty();
+    $('#descriptionWrapper').hide();
     $('#credits p').html($thumb.attr('title'))
     var img = $('<img id="displayed" class="cursorClass" style="display:none;" title="'+$thumb.attr('title')+'"/>').load(function(){
       var $this = $(this);
