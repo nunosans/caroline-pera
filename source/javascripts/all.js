@@ -94,7 +94,7 @@ $(document).ready(function() {
       description.show();
     });
 
-    description.click(function(event) {
+    description.find('.button-close').click(function(event) {
       event.preventDefault();
       description.hide();
     });
