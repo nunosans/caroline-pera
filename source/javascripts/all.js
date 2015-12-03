@@ -73,7 +73,7 @@ $(document).ready(function() {
   };
   navAnimations();
 
-  function projectDescription() {
+  function albumDescription() {
     var descriptionThumbnail = $('*[data-action="show-album-description"');
     var description = $('#albumDescriptionWrapper');
 
@@ -82,7 +82,23 @@ $(document).ready(function() {
       description.fadeIn(400);
     })
   };
-  projectDescription();
+  albumDescription();
+
+  function pictureDescription() {
+    var descriptionLink = $('*[data-action="show-picture-description"');
+    var description = $('#pictureDescriptionWrapper');
+
+    descriptionLink.click(function(event) {
+      event.preventDefault();
+      description.show();
+    });
+
+    description.click(function(event) {
+      event.preventDefault();
+      description.hide();
+    });
+  };
+  pictureDescription();
 
   $(window).load(function() {
 

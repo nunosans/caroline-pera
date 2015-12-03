@@ -24,6 +24,7 @@ $(function() {
    */
   $('#thumbsContainer img').on('click', function() {
     loadPhoto($(this), 'cursorPlus');
+    setupPhotoDescription($(this).attr('data-picture'));
   }).on('mouseover', function() {
     var $this   = $(this);
     $this.stop().animate({'opacity':'1.0'}, 200);
@@ -100,6 +101,15 @@ $(function() {
     }).attr('src',$thumb.attr('alt'));
 
     return img;
+  }
+
+  function setupPhotoDescription(number) {
+    var descriptionWrapper = $('#pictureDescriptionWrapper');
+    var allDescriptions = descriptionWrapper.find('.description');
+    var selectedDescription = descriptionWrapper.find('.description[data-picture="' + number + '"]');
+    descriptionWrapper.hide();
+    allDescriptions.addClass('hidden');
+    selectedDescription.removeClass('hidden');
   }
 
   //Get our elements for faster access and set overlay width
