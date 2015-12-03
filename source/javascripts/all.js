@@ -74,7 +74,7 @@ $(document).ready(function() {
   navAnimations();
 
   function albumDescription() {
-    var descriptionThumbnail = $('*[data-action="show-album-description"');
+    var descriptionThumbnail = $('*[data-action="show-album-description"]');
     var description = $('#albumDescriptionWrapper');
 
     descriptionThumbnail.click(function() {
@@ -86,7 +86,7 @@ $(document).ready(function() {
   albumDescription();
 
   function pictureDescription() {
-    var descriptionLink = $('*[data-action="show-picture-description"');
+    var descriptionLink = $('*[data-action="show-picture-description"]');
     var description = $('#pictureDescriptionWrapper');
 
     descriptionLink.click(function(event) {
