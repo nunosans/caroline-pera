@@ -79,6 +79,7 @@ $(document).ready(function() {
 
     descriptionThumbnail.click(function() {
       $('#imageWrapper').empty();
+      $('.album-credits').hide();
       description.fadeIn(400);
     })
   };
