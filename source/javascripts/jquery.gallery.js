@@ -90,6 +90,7 @@ $(function() {
     current = $thumb.index()+1;
     $('#imageWrapper').empty();
     $('#albumDescriptionWrapper').hide();
+    $('#videoWrapper').hide();
     $('.album-credits').show();
     var img = $('<img id="displayed" class="cursorClass" style="display:none;" title="'+$thumb.attr('title')+'"/>').load(function(){
       var $this = $(this);

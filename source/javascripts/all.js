@@ -85,6 +85,18 @@ $(document).ready(function() {
   };
   albumDescription();
 
+  function video() {
+    var videoThumbnail = $('*[data-action="show-video"]');
+    var video = $('#videoWrapper');
+
+    videoThumbnail.click(function() {
+      $('#imageWrapper').empty();
+      $('.album-credits').hide();
+      video.fadeIn(400);
+    })
+  };
+  video();
+
   function pictureDescription() {
     var descriptionLink = $('*[data-action="show-picture-description"]');
     var description = $('#pictureDescriptionWrapper');
