@@ -98,10 +98,9 @@ $(document).ready(function() {
   video();
 
   function pictureDescription() {
-    var descriptionLink = $('*[data-action="show-picture-description"]');
     var description = $('#pictureDescriptionWrapper');
 
-    descriptionLink.click(function(event) {
+    $('body').on('click', '*[data-action="show-picture-description"]', function(event) {
       event.preventDefault();
       description.show();
     });
