@@ -164,8 +164,21 @@
   background-image: url("/images/graphics/bg-credits.png");
   z-index: 10;
   a {
-    color: $mid-tone;
-    text-decoration: underline;
+    display: inline-block;
+    background-color: $dark;
+    color: white;
+    padding: 4px 8px 5px 24px;
+    border-radius: 4px;
+    margin: 3px 0;
+    text-decoration: none;
+    background-image: url("/images/graphics/description-icon.png");
+    background-size: 10px 10px;
+    background-position: 8px 6px;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    &:hover {
+      background-color: $mid-tone;
+    }
   }
 }
 
