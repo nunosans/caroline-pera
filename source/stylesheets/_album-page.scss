@@ -15,7 +15,6 @@
   font-size: 17px;
   line-height: 22px;
   position: absolute;
-  overflow: auto;
   left: 20px;
   right: 20px;
   top: 120px;
@@ -23,12 +22,6 @@
   @media (min-width: 750px) {
     left: 120px;
     right: 120px;
-    -webkit-column-count: 2;
-       -moz-column-count: 2;
-            column-count: 2;
-    -webkit-column-gap: 60px;
-       -moz-column-gap: 60px;
-            column-gap: 60px;
   }
   h5 {
     display: block;
@@ -40,24 +33,39 @@
     font-family: serif;
     color: darken(white, 75%);
   }
-}
-
-#videoWrapper {
-  font-size: 17px;
-  line-height: 22px;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 120px;
-  bottom: 120px;
-  right: 0;
-  display: none;
-  @media (min-width: 750px) {
-    width: 800px;
-    height: 450px;
-    left: 50%;
-    top: 50%;
-    margin: -225px 0 0 -400px;
+  .album-video {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    padding-bottom: 56%;
+    @media (min-width: 750px) {
+      width: 50%;
+      padding-bottom: 28%;
+    }
+    iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+  .album-description {
+    width: 100%;
+    padding-top: 61%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: scroll;
+    @media (min-width: 750px) {
+      width: 40%;
+      padding-top: 0;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
   }
 }
 
